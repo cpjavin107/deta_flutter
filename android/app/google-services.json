@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341642780111",
+    "firebase_url": "https://deta-ff28a.firebaseio.com",
+    "project_id": "deta-ff28a",
+    "storage_bucket": "deta-ff28a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341642780111:android:5a928dc36adc67d0",
+        "android_client_info": {
+          "package_name": "com.javinindia.deta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341642780111-l774ahhagqaj7crgcvmihaj0gog6s1ci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.javinindia.deta",
+            "certificate_hash": "bbb69aaaecd96cb2e94ae6ae5eacba7488aa4020"
+          }
+        },
+        {
+          "client_id": "341642780111-7p93vvqhqc46pqofbermcp0h269jh5uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcFFrgWMFFG-y1dobE8-UfN4Svv6_X1w4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341642780111-7p93vvqhqc46pqofbermcp0h269jh5uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
