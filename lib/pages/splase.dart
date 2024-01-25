@@ -95,15 +95,18 @@ class _SplashScreenState extends State<SplashScreen> {
                   SizedBox(
                     height: 10.0,
                   ),
-                  Lottie.asset("assets/images/lottie_loading.json"),
-                  // Text(
-                  //   "Loading App...",
-                  //   style: TextStyle(
-                  //     fontSize: 12,
-                  //     color: Colors.black,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
+                  CircularProgressIndicator(color: Colors.white,),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                    "Loading App...",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             )

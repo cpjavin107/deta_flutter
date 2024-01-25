@@ -23,7 +23,7 @@ class About_Page extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Text(
-                    "Kalinga Vysya Samaj",
+                    "DELHI ELECTRICAL TRADERS ASSOCIATION [REGD.]",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,

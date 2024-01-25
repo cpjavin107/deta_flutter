@@ -76,14 +76,6 @@ class _EnquiryState extends State<Enquiry> {
                                  child: Column(
                                    crossAxisAlignment: CrossAxisAlignment.start,
                                    children: [
-                                    /* Text( enquiryData.data?[index].title??"", style: TextStyle(
-                                       fontSize: 16,
-                                       color: Colors.black,
-                                       fontWeight: FontWeight.bold,
-                                     ),
-                                     ),
-                                     SizedBox(height: 6,),*/
-
                                      Text( enquiryData.data?[index].name??"", style: TextStyle(
                                        fontSize: 15,
                                        color: Colors.black,
@@ -97,15 +89,6 @@ class _EnquiryState extends State<Enquiry> {
                                        color: Colors.black,
                                      ),
                                      ),
-
-                                     // SizedBox(height: 10,),
-                                     //
-                                     // Text( "Type:  ${data["type"], style: TextStyle(
-                                     //   fontSize: 15,
-                                     //   color: Colors.black,
-                                     //   fontWeight: FontWeight.bold,
-                                     // ),
-                                     // ),
                                      SizedBox(height: 8,),
 
                                      Text( enquiryData.data?[index].description??"", style: TextStyle(
@@ -150,7 +133,6 @@ class _EnquiryState extends State<Enquiry> {
            floatingActionButton: FloatingActionButton(
              onPressed: () {
                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Add_Enquiry() ));
-
              },
              backgroundColor: AppColors.maroonColor,
              tooltip: 'Add Enquiry',

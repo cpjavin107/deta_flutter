@@ -21,7 +21,8 @@ class _BodyState extends State<Body> {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       children: [
         InkWell(
-          child:Container(
+          child:_Card(Icons.person, "MEMBERS"),
+          /*Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -41,13 +42,14 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ) ,
+          )*/
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.members);
           },
         ),
         InkWell(
-          child: Container(
+          child: _Card(Icons.supervisor_account, "EXECUTIVE \nCOMMITTEE"),
+          /*Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -66,13 +68,14 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ),
+          ),*/
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.committee);
           },
         ),
         InkWell(
-          child:  Container(
+          child: _Card(Icons.library_books, "NEWS & EVENTS"),
+          /*Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -91,13 +94,14 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ),
+          ),*/
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.newsevent);
           },
         ),
         InkWell(
-          child:  Container(
+          child: _Card(Icons.search, "ALPHABETICAL \nSEARCH"),
+          /*Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -116,13 +120,14 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ),
+          ),*/
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.alphasearch);
           },
         ),
         InkWell(
-          child: Container(
+          child: _Card(Icons.info, "USEFUL \nDETAILS"),
+          /*Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -141,13 +146,14 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ),
+          ),*/
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.selectUseful);
           },
         ),
         InkWell(
-          child:  Container(
+          child:  _Card(Icons.business, "HOLIDAY \nCALENDER"),
+          /*Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -166,13 +172,14 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ),
+          ),*/
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.viewholiday);
           },
         ),
         InkWell(
-          child: Container(
+          child: _Card(Icons.question_answer, "ENQUIRY"),
+         /* Container(
             decoration: BoxDecoration(
               color: AppColors.mainColor,
               shape: BoxShape.circle,
@@ -193,13 +200,59 @@ class _BodyState extends State<Body> {
                 ),
               ],
             ),
-          ),
+          ),*/
 
           onTap: () {
             Navigator.pushNamed(context, MyRoutes.seleteenquiry);
           },
         ),
       ],
+    );
+  }
+  Widget _Card(IconData icon, var title) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+        width: 150.0,
+        height: 150.0,
+         decoration: BoxDecoration(
+           color: AppColors.mainColor,
+          borderRadius: BorderRadius.circular(20.0), // Set the corner radius
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius:
+                BorderRadius.circular(26.0), // Set the corner radius
+              ),
+              elevation: 10,
+              child: Container(
+                height: 56,
+                width: 56,
+                child: Icon(
+                  icon,
+                  size: 30.0,
+                  color: AppColors.maroonColor,
+                ),
+              ),
+            ),
+            SizedBox(height: 8.0),
+            Center(
+              child: Text(
+                textAlign:TextAlign.center,
+                '$title',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

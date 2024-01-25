@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 // import 'package:flutter_share/flutter_share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../contants/sp_constants.dart';
 import '../../../helper/shared_pref.dart';
 import '../../../res/colors/appcolors.dart';
@@ -157,22 +158,22 @@ class _DrawerListState extends State<DrawerList> {
             },
             trailing: Icon(Icons.keyboard_arrow_right,size: 30, color:Colors.black),
           ),
-          // Divider(color: Colors.black),
-          // ListTile(
-          //   title: Text("Rate Us",
-          //     style: TextStyle(
-          //       fontSize: 13,
-          //       color: Colors.black,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          //   onTap: (){
-          //       print("object");
-          //     // _requestReview(context);
-          //     },
-          //   trailing: Icon(Icons.keyboard_arrow_right,size: 30, color:Colors.black),
-          // ),
           Divider(color: Colors.black),
+          ListTile(
+            title: Text("Rate Us",
+              style: TextStyle(
+                fontSize: 13,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: (){
+                print("object");
+              _requestReview();
+              },
+            trailing: Icon(Icons.keyboard_arrow_right,size: 30, color:Colors.black),
+          ),
+          /*Divider(color: Colors.black),
           ListTile(
             title: Text("Get Membership",
               style: TextStyle(
@@ -185,7 +186,7 @@ class _DrawerListState extends State<DrawerList> {
               member_id == ""?Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Select())):Navigator.of(context).push(MaterialPageRoute(builder: (context) => SubscriptionPage()));
             },
             trailing: Icon(Icons.keyboard_arrow_right,size: 30, color:Colors.black),
-          ),
+          ),*/
           Divider(color: Colors.black),
           ListTile(
             title: Text("About App",
@@ -235,9 +236,19 @@ class _DrawerListState extends State<DrawerList> {
 
   void share(BuildContext context) async {
     final box = context.findRenderObject() as RenderBox?;
-    await Share.share("Check out this cool app \n https://play.google.com/store/apps/details?id=com.vysya.kalinga",
-        subject: "https://play.google.com/store/apps/details?id=com.vysya.kalinga",
+    await Share.share("Check out this cool app \n https://play.google.com/store/apps/details?id=com.javinindia.deta",
+        subject: "https://play.google.com/store/apps/details?id=com.javinindia.deta",
         sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size);
   }
-
+  _requestReview() async{
+    const String packageName = 'com.javinindia.deta';
+    final String url = 'https://play.google.com/store/apps/details?id=$packageName';
+    if (await canLaunch(url)) {
+    await launch(url);
+    } else {
+    throw 'Could not launch $url';
+    }
 }
+}
+
+

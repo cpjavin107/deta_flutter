@@ -57,7 +57,7 @@ class _News_PageState extends State<News_Page> {
                             color: Colors.white,
                             child: InkWell(
                               onTap: () {
-                                newsData.data?[index].images?.length != 0 ?  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Event_Images(value :newsData.data?[index].images,) ))
+                                newsData.data?[index].images?.length != 0 ?  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Event_Images(value :newsData.data?[index].images, title: newsData.data?[index].description,) ))
                                     :Text("News images not found!");
                               },
                               child: Padding(
