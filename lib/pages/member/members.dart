@@ -39,7 +39,7 @@ class _Members_ListState extends State<Members_List> with TickerProviderStateMix
                   children: [
                     Expanded(
                       child: Obx(
-                        ()=> ListView.builder(
+                        ()=> memberFilterController.loading.value?Center(child: CircularProgressIndicator()):ListView.builder(
                             itemCount:memberFilterController.memberData.length,
                             itemBuilder: (BuildContext context,int index){
                               return Padding(

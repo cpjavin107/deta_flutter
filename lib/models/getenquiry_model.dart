@@ -59,10 +59,10 @@ class Data {
     id = json['id'];
     title = json['title'];
     name = json['name'];
-    mobile = json['mobile'];
+    mobile = json['type'];
     description = json['description'];
     createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
+    updatedAt = json['contact_no'];
   }
 
   Map<String, dynamic> toJson() {
@@ -70,10 +70,10 @@ class Data {
     data['id'] = this.id;
     data['title'] = this.title;
     data['name'] = this.name;
-    data['mobile'] = this.mobile;
+    data['type'] = this.mobile;
     data['description'] = this.description;
     data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    data['contact_no'] = this.updatedAt;
     return data;
   }
 }

@@ -53,6 +53,7 @@ class _Alpha_detail_PageState extends State<Alpha_detail_Page> {
         future:Future.wait([getProfile(value)]),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if(snapshot.hasData){
+            print("\n\n\n${snapshot.data[0]}\n\n");
             profileData = snapshot.data[0];
             return Scaffold(
               appBar: AppBar(
@@ -114,7 +115,7 @@ class _Alpha_detail_PageState extends State<Alpha_detail_Page> {
                                        crossAxisAlignment: CrossAxisAlignment.center,
                                        mainAxisAlignment: MainAxisAlignment.center,
                                        children: <Widget>[
-                                         Text(profileData.data[index].firmName!,
+                                         Text("${profileData.data[index].firmName}",
                                            style: const TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold,)
                                            ,maxLines: 2,),
 
@@ -147,7 +148,7 @@ class _Alpha_detail_PageState extends State<Alpha_detail_Page> {
                                 color: AppColors.mainColor,
                                 child: ListTile(
                                   onTap: () {
-                                    profileData.data[index].mobileNumber.isEmpty?print("empty"): launch('tel:${profileData.data[index].mobileNumber}');
+                                    profileData.data[index].mobileNumber!.isEmpty?print("empty"): launch('tel:${profileData.data[index].mobileNumber}');
                                   },
                                   leading: Container(
                                     padding: EdgeInsets.only(right: 12.0),
@@ -183,7 +184,7 @@ class _Alpha_detail_PageState extends State<Alpha_detail_Page> {
                                 color: AppColors.mainColor,
                                 child: ListTile(
                                   onTap: () {
-                                    profileData.data[index].officeNumber.isNotEmpty?launch('tel:${profileData.data[index].officeNumber}'):print("empty");
+                                    profileData.data[index].officeNumber!.isNotEmpty?launch('tel:${profileData.data[index].officeNumber}'):print("empty");
                                   },
                                   leading: Container(
                                     padding: EdgeInsets.only(right: 12.0),
@@ -193,7 +194,7 @@ class _Alpha_detail_PageState extends State<Alpha_detail_Page> {
                                     child: Icon(Icons.smartphone, color: Colors.white),
                                   ),
                                   title: Text("Firm Telephone No:", style: TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold,),),
-                                  subtitle:  Text(profileData.data[index].officeNumber!, style: const TextStyle(fontSize: 14, color: Colors.white,),),
+                                  subtitle:  Text("${profileData.data[index].officeNumber}", style: const TextStyle(fontSize: 14, color: Colors.white,),),
                                   trailing: Icon(Icons.call,size: 30, color:Colors.blueAccent),
                                 ),
                               ),
@@ -201,7 +202,7 @@ class _Alpha_detail_PageState extends State<Alpha_detail_Page> {
                                 color: AppColors.mainColor,
                                 child: ListTile(
                                   onTap: () {
-                                    profileData.data[index].email.isNotEmpty ?  launch('mailto:${profileData.data[index].email}'):print("empty");
+                                    profileData.data[index].email!.isNotEmpty ?  launch('mailto:${profileData.data[index].email}'):print("empty");
                                   },
                                   leading: Container(
                                     padding: const EdgeInsets.only(right: 12.0),

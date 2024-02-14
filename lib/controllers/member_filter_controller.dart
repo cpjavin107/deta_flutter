@@ -11,6 +11,7 @@ class MemberFilterController extends GetxController{
   TextEditingController addressController = TextEditingController();
 var data=<Data>[].obs;
 var memberData=<Data>[].obs;
+var loading=false.obs;
 
   getFilterData(var name,var firmName) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -22,7 +23,7 @@ var memberData=<Data>[].obs;
       map['firmName'] = "$firmName";
       map['ownerName'] = "$name";
       map['block'] = "";
-      map['page'] = "1";
+      map['page'] = "-1";
       map['ownerId'] = "$member_id";
       print("**********************");
       print("***********$map***********");
@@ -43,6 +44,8 @@ var memberData=<Data>[].obs;
       }
     }
   getFilterMemberData() async {
+    loading.value=true;
+    memberData.clear();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var  member_id = await prefs.getString('member_id') ?? '';
     var url ='https://nritak.com/DETassociation/DETassociation_api/index.php/Member/getAllFirmOwners';
@@ -60,6 +63,8 @@ var memberData=<Data>[].obs;
     var response = await http.post(Uri.parse(url), body: map);
     Map<String, dynamic> data1 = jsonDecode(response.body);
     if (response.statusCode == 200 && data1['status'] == 1) {
+      loading.value=false;
+
       var jsonString = response.body;
       ResFilterData resFilterData = ResFilterData.fromJson(json.decode(jsonString));
       memberData.clear();
@@ -68,6 +73,8 @@ var memberData=<Data>[].obs;
       print("***********$jsonString***********");
       print("**********************");
     } else {
+      loading.value=false;
+
       memberData.clear();
       print(response.body);
     }

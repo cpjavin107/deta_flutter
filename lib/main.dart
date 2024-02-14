@@ -1,27 +1,12 @@
-import 'package:deta/pages/management/management_screen.dart';
-import 'package:deta/pages/management/office_bearers_meneber_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:deta/pages/alphabetical_search/alphabet_list.dart';
-import 'package:deta/pages/committee/main_page.dart';
-import 'package:deta/pages/enquiry/add_enquiry_page.dart';
-import 'package:deta/pages/enquiry/enquiry.dart';
-import 'package:deta/pages/holiday/holidat_list.dart';
-import 'package:deta/pages/home/home_page.dart';
-import 'package:deta/pages/login_pages.dart';
-import 'package:deta/pages/member/member_page.dart';
-import 'package:deta/pages/member/members.dart';
-import 'package:deta/pages/news_and_events/news_page.dart';
-import 'package:deta/pages/splase.dart';
-import 'package:deta/pages/useful_details/select_useful_details.dart';
 import 'package:deta/res/routes/named_routes.dart';
 import 'package:deta/res/routes/my_routes.dart';
 import 'package:deta/res/theme/themes.dart';
 import 'package:overlay_support/overlay_support.dart';
-// ignore_for_file: prefer_const_constructors
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

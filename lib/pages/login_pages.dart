@@ -90,6 +90,11 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             keyboardType: TextInputType.number,
                             focusNode: myFocusNode,
+                            onChanged: (value){
+                              if(value.length==10){
+                                FocusScope.of(context).unfocus();
+                              }
+                            },
                             decoration: InputDecoration(
                               counterText: '',
                               hintText: "Enter Mobile no.",

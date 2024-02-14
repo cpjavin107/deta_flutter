@@ -50,137 +50,139 @@ class _Member_PageState extends State<Member_Page> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             color: Colors.transparent,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 30.0,
-                ),
-                Text(
-                  "Search By Name",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    showMyDialog("0");
-                  },
-                  child: TextField(
-                    style: TextStyle(color: Colors.black),
-                    controller: memberFilterController.nameController,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabled: false,
-                      isDense: true,
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: 'ex. Dinesh Aggarwal',
-                      focusColor: Colors.black,
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.grey), // Change the color here
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.grey), // Change the color here
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                            10.0), // Set the border radius
-                      ),
-                    ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 30.0,
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Search By Firm Name",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    showMyDialog("1");
-                  },
-                  child: TextField(
-                    style: TextStyle(color: Colors.black),
-                    controller: memberFilterController.nameFirmController,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      enabled: false,
-                      isDense: true,
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: 'ex. ABC Pvt Ltd',
-                      focusColor: Colors.black,
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.grey), // Change the color here
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.grey), // Change the color here
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(
-                            10.0), // Set the border radius
-                      ),
-                    ),
+                  Text(
+                    "Search By Name",
+                    style: TextStyle(color: Colors.white),
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Search By Address",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                TextField(
-                  controller: memberFilterController.addressController,
-                  style: TextStyle(color: Colors.black),
-                  cursorColor: Colors.black,
-                  decoration: InputDecoration(
-                    isDense: true,
-                    filled: true,
-                    fillColor: Colors.white,
-                    hintText: 'ex. a1-401',
-                    focusColor: Colors.black,
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.grey), // Change the color here
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.grey), // Change the color here
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius:
-                      BorderRadius.circular(10.0), // Set the border radius
-                    ),
+                  SizedBox(
+                    height: 10.0,
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.to(Members_List());
-
+                  GestureDetector(
+                    onTap: () {
+                      showMyDialog("0");
                     },
-                    child: Text("Apply"),
+                    child: TextField(
+                      style: TextStyle(color: Colors.black),
+                      controller: memberFilterController.nameController,
+                      cursorColor: Colors.black,
+                      decoration: InputDecoration(
+                        enabled: false,
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.white,
+                        hintText: 'ex. Dinesh Aggarwal',
+                        focusColor: Colors.black,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Colors.grey), // Change the color here
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Colors.grey), // Change the color here
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Set the border radius
+                        ),
+                      ),
+                    ),
                   ),
-                )
-              ],
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                    "Search By Firm Name",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      showMyDialog("1");
+                    },
+                    child: TextField(
+                      style: TextStyle(color: Colors.black),
+                      controller: memberFilterController.nameFirmController,
+                      cursorColor: Colors.black,
+                      decoration: InputDecoration(
+                        enabled: false,
+                        isDense: true,
+                        filled: true,
+                        fillColor: Colors.white,
+                        hintText: 'ex. ABC Pvt Ltd',
+                        focusColor: Colors.black,
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Colors.grey), // Change the color here
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Colors.grey), // Change the color here
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Set the border radius
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                    "Search By Address",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  TextField(
+                    controller: memberFilterController.addressController,
+                    style: TextStyle(color: Colors.black),
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      isDense: true,
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: 'ex. a1-401',
+                      focusColor: Colors.black,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.grey), // Change the color here
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.grey), // Change the color here
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius:
+                        BorderRadius.circular(10.0), // Set the border radius
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(Members_List());
+
+                      },
+                      child: Text("Apply"),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ],
@@ -208,7 +210,6 @@ class _BottomDialogState extends State<BottomDialog> {
   void initState() {
     super.initState();
     memberFilterController.getFilterData("", "");
-
   }
 
   void filterItems(String query) {
@@ -297,13 +298,16 @@ class _CustomDailyPageState extends State<CustomDailyPage> {
         if (widget.check == "0") {
 
           memberFilterController.nameController.text = widget.data!.name;
-          memberFilterController.nameFirmController.clear();
+          memberFilterController.nameFirmController.text =
+          (widget.data?.firmName == ""
+              ? ""
+              : widget.data?.firmName)!;
           Get.back();
         } else {
           memberFilterController.nameController.clear();
           memberFilterController.nameFirmController.text =
           (widget.data?.firmName == ""
-              ? "FIRE NAME NOT FOUND"
+              ? ""
               : widget.data?.firmName)!;
           Get.back();
         }

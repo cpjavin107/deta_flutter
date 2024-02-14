@@ -17,7 +17,7 @@ class MemberProfileController extends GetxController {
        profile = await RemoteServices.fetchProfile(value);
        if (profile != null) {
          adsList.value = profile.data!;
-
+         print("not null");
        }
 
      }catch (exception){

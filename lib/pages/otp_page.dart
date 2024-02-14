@@ -95,6 +95,15 @@ class _OTP_PageState extends State<OTP_Page> {
                          onSaved: (val) {
                            otp = val;
                          },
+                         onChanged: (val) {
+                           if(val.length==6){
+                             FocusScope.of(context).unfocus();
+                             OTP(_otpController.text,);
+                             setState(() {
+                               isLoading=true;
+                             });
+                           }
+                         },
                          keyboardType: TextInputType.number,
                          focusNode: myFocusNode,
                          decoration: InputDecoration(
@@ -226,17 +235,17 @@ class _OTP_PageState extends State<OTP_Page> {
       }else{
         if(resposne1['status']==0){
           // scaffoldMessenger.showSnackBar(SnackBar(content:Text("${resposne1['msg']}")));
-          scaffoldMessenger.showSnackBar(SnackBar(content:Text("Invalid OTP!")));
+          scaffoldMessenger.showSnackBar(SnackBar(content:Text("Invalid OTP!",style: TextStyle(color:Colors.white),),backgroundColor: Colors.red,));
         }else{
           var user = resposne1['data'];
           savePref(user[0]["id"],user[0]["name_of_the_member"],user[0]["email_id"],user[0]["contact_number"],
               user[0]["firm_name"],user[0]["image"],user[0]["executive_patron_life_member"]);
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Home_Page()));
-          scaffoldMessenger.showSnackBar(SnackBar(content:Text("${resposne1['msg']}")));
+          scaffoldMessenger.showSnackBar(SnackBar(content:Text("${resposne1['msg']}",style: TextStyle(color:Colors.white),),backgroundColor: Colors.green));
         }
       }
     } else {
-      scaffoldMessenger.showSnackBar(SnackBar(content:Text("Please try again!")));
+      scaffoldMessenger.showSnackBar(SnackBar(content:Text("Please try again!",style: TextStyle(color:Colors.white),),backgroundColor: Colors.red));
     }
 
 
